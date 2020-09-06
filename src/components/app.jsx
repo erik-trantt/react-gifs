@@ -25,7 +25,7 @@ class App extends Component {
   }
 
   search = (query) => {
-    console.log(process.env.API_UNSPLASH);
+    // console.log(process.env.API_UNSPLASH);
     // TODO: API Call
     fetch(`https://api.unsplash.com/search/photos?per_page=10&query=${query}`, {
       method: 'GET',
@@ -43,8 +43,8 @@ class App extends Component {
           const id = result.urls.small.match(/photo-(.+)\?/)[1];
           return Object.assign({ id });
         });
-        console.log(data);
-        console.log(ids);
+        // console.log(data);
+        // console.log(ids);
         this.setState({
           gifs: ids
         });
