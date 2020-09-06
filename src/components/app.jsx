@@ -11,8 +11,8 @@ class App extends Component {
 
     this.state = {
       gifs: [],
-      // selectedGif: null
-      selectedGif: "1526047932273-341f2a7631f9"
+      selectedGif: null
+      // selectedGif: "1526047932273-341f2a7631f9"
     };
 
     this.search("flowers");

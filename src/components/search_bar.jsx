@@ -7,8 +7,9 @@ class SearchBar extends Component {
   handleUpdate = (event) => {
     if (this.isKeyEnterPressed(event.keyCode)) {
       const query = event.target.value;
-      console.log(query);
-      this.props.searchFunction(query);
+      // console.log(query);
+      const { searchFunction } = this.props;
+      searchFunction(query);
     }
   }
 
