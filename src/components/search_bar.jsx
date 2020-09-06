@@ -1,14 +1,15 @@
+/* eslint react/prefer-stateless-function: off */
 import React, { Component } from 'react';
 
-// eslint-disable-next-line react/prefer-stateless-function
 class SearchBar extends Component {
   isKeyEnterPressed = keyCode => keyCode === 13;
 
   handleUpdate = (event) => {
     if (this.isKeyEnterPressed(event.keyCode)) {
       const query = event.target.value;
-      console.log(query);
-      this.props.searchFunction(query);
+      // console.log(query);
+      const { searchFunction } = this.props;
+      searchFunction(query);
     }
   }
 

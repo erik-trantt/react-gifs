@@ -6,8 +6,8 @@ import React, { Component } from "react";
 class Gif extends Component {
   handleClick = () => {
     const { selectGif, id } = this.props;
-    console.log(selectGif);
-    console.log(id);
+    // console.log(selectGif);
+    // console.log(id);
     if (selectGif) {
       selectGif(id);
     }
@@ -15,6 +15,8 @@ class Gif extends Component {
 
   render() {
     const { id, mode } = this.props;
+    if (!id) return <div className="gif">Select an image...</div>;
+
     const width = mode === "small" ? 400 : 200;
     const src = `https://images.unsplash.com/photo-${id}?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=${width}&fit=max&ixid=eyJhcHBfaWQiOjE2MzQxM30`;
 
