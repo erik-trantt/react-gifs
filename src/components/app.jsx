@@ -1,10 +1,10 @@
+/* eslint react/prefer-stateless-function: off */
 import React, { Component } from 'react';
 
 import SearchBar from './search_bar';
 import Gif from './gif';
 import GifList from './gif_list';
 
-// eslint-disable-next-line react/prefer-stateless-function
 class App extends Component {
   constructor(props) {
     super(props);
@@ -25,6 +25,7 @@ class App extends Component {
   }
 
   search = (query) => {
+    console.log(process.env.API_UNSPLASH);
     // TODO: API Call
     fetch(`https://api.unsplash.com/search/photos?per_page=10&query=${query}`, {
       method: 'GET',
@@ -33,7 +34,7 @@ class App extends Component {
       headers: {
         Accept: 'application/json',
         'Accept-Version': 'v1',
-        Authorization: 'Client-ID 09Zyhx-8tKvDSLQo98JXnPKmK6MrQRmc7ujEVn8hXhg'
+        Authorization: `Client-ID ${process.env.API_UNSPLASH}`
       }
     })
       .then(response => response.json())
